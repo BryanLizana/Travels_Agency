@@ -1,0 +1,24 @@
+-una opcion de venta que dará el disparo :
+según el MDC que tenga sacará el Brand y tipo de seguro ( BRANDSTATE-TYPEINSURANCE  )
+según el Code de empleado sacarás la oficina
+y con el tipo de seguro y el code ede office => lista de commissions  
+Sacarás las personas que están relacionadas a esa officina ( los id_type_persona que hay en la tabla ravagers_offices ) 
+Y aplicarás al presidente, al vice presidente , al tag_manager y al branch manager su commision respectiva ( ayudado del tipo de seguro id que se sacó antes )
+y al empleado que hizo el disparo
+
+
+- una super tabla que puedas ver las commisiones de los emple, pre, vice etc
+ventas por offices
+ravagers-reposrts
+
+
+
+en ravagers añadir el texto de list for TYPEINSURANCE y, al dejar vacío que se ponga cero
+return de list-commisions to list la url¡¡¡¡¡¡
+
+
+Un logg de las comissiones¡¡
+
+
+una commision_final_ "tigger" su id unique estará igual de unique que el id_lead
+al momento de que no sea el select que hace el disparo removerá la commision_final_

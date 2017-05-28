@@ -1,0 +1,26 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+alter procedure [dbo].[sp_List_ciudades_of_transporte]  AS 
+
+begin 
+
+SELECT t.transporte_id , t.type_transporte , a.agencia_description , co.ciudad_name as 'Parte de:' ,cd.ciudad_name as 'Hasta:' FROM transportes as t INNER JOIN ciudades as co on co.ciudad_id = t.origen_ciudad_id INNER JOIN ciudades as cd on cd.ciudad_id =  t.destino_ciudad_id  INNER JOIN agencias as a on a.agencia_id = t.agencia_id
+         INNER JOIN Transporte_clase as tcls on tcls.transporte_id = t.transporte_id
+ 
+ end
+
+GO
+
+
+//reportes para
+ver los citios más visitados -
+ver el usuario que vende más con su número de ventas-
+Las fechas que más viajan-
+las fechas que más se vende -
+las agencias más solicitadas
+los pasajeros que más viajan
+la lista de ventas concluidas 
+las lista de reservas
+
