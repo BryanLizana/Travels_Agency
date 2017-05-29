@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocios;
 namespace CapaPresentacion
@@ -50,9 +49,9 @@ namespace CapaPresentacion
         }
         public void limpiarcampostransporte()
         {
-            txttransagenciid.Text = "0";
+            //txttransagenciid.Text = "0";
             txttransid.Text = "0";
-            txttransagenciname.Text = "NULL";
+            //txttransagenciname.Text = "NULL";
             txttransciudadfromid.Text = "";
             txttransciudadtoid.Text = "";
             txttransfrom.Text = "";
@@ -66,8 +65,8 @@ namespace CapaPresentacion
         {
             txthotelname.Text = "";
             txthotelid.Text = "0";
-            txthotelagenciaid.Text = "";
-            txthotelagencianame.Text = "NULL";
+            //txthotelagenciaid.Text = "";
+            //txthotelagencianame.Text = "NULL";
             txthotelciudadid_temp.Text = "";
             txthotelprecio.Text = "";
 
@@ -741,6 +740,19 @@ namespace CapaPresentacion
         private void tableclasstransporte_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            //ir a agencias tab
+            TabControlFrmBack.SelectedTab = tabagencias;
+        }
+
+    
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //ir a agencias tab
+            TabControlFrmBack.SelectedTab = tabagencias;
         }
     }
 }

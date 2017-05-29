@@ -12,3 +12,10 @@ C:\Users\Alumno\Desktop\TravelsAgency\CapaNegocios\bin\Debug\CapaDatos.pdb
 C:\Users\Alumno\Desktop\TravelsAgency\CapaNegocios\obj\Debug\CapaNegocios.csprojResolveAssemblyReference.cache
 C:\Users\Alumno\Desktop\TravelsAgency\CapaNegocios\obj\Debug\CapaNegocios.dll
 C:\Users\Alumno\Desktop\TravelsAgency\CapaNegocios\obj\Debug\CapaNegocios.pdb
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaNegocios\bin\Debug\CapaNegocios.dll
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaNegocios\bin\Debug\CapaNegocios.pdb
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaNegocios\bin\Debug\CapaDatos.dll
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaNegocios\bin\Debug\CapaDatos.pdb
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaNegocios\obj\Debug\CapaNegocios.csprojResolveAssemblyReference.cache
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaNegocios\obj\Debug\CapaNegocios.dll
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaNegocios\obj\Debug\CapaNegocios.pdb

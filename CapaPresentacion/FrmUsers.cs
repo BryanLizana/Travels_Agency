@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocios;
 namespace CapaPresentacion
@@ -63,7 +62,11 @@ namespace CapaPresentacion
         private void btnusersave_Click(object sender, EventArgs e)
         {
 
-            if ( txtuserdni.Text != "" && txtuserpass.Text != ""  && txtusertype.SelectedItem.ToString() != "")
+            if ( txtuserdni.Text != "" && txtuserpass.Text != ""  && 
+                txtusertype.SelectedItem.ToString() != "" &&
+                txtusernamafull.Text != "" &&
+                txtusertel.Text != "" 
+                )
             {
                 UserController Obj = new UserController();
                 UserController User = new UserController();

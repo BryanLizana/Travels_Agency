@@ -8,3 +8,8 @@ C:\Users\Alumno\Desktop\TravelsAgency\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Users\Alumno\Desktop\TravelsAgency\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
 C:\Users\Alumno\Desktop\TravelsAgency\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Alumno\Desktop\TravelsAgency\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\BL-PC\Desktop\TravelsAgency\CapaDatos\obj\Debug\CapaDatos.pdb

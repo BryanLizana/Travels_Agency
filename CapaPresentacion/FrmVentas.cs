@@ -5,9 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocios;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
+using System.IO;
+
 namespace CapaPresentacion
 {
     public partial class FrmVentas : Form
@@ -53,7 +56,7 @@ namespace CapaPresentacion
 
         public void limpiarcamposventa()
         {
-      
+
             txtvenid.Text = "0";
             txtvencliape.Text = "";
             txtvenclidni.Text = "";
@@ -61,7 +64,7 @@ namespace CapaPresentacion
 
             VentaController Obj = new VentaController();
             txtvencode.Text = Obj.getcode();
-            
+
             txtvenhotelid.Text = "0";
             txtvenhotelorigen.Text = "ORIGEN";
             txtventransid.Text = "0";
@@ -104,7 +107,7 @@ namespace CapaPresentacion
         {
 
             CiudadController Obj = new CiudadController();
-          
+
             tableciudadeshotels.DataSource = Obj.ListForHotels();
 
 
@@ -133,34 +136,34 @@ namespace CapaPresentacion
         }
 
 
-        public void Search_Pasajero(String dni, String Where){
+        public void Search_Pasajero(String dni, String Where) {
 
-            ClienteController Obj =  new ClienteController();
-            ClienteController Data =  new ClienteController();
-            Data.Pasajero_dni =  dni;
-            DataTable PasajeroSearched  =         Obj.Search_pasajero(Data);
-           
+            ClienteController Obj = new ClienteController();
+            ClienteController Data = new ClienteController();
+            Data.Pasajero_dni = dni;
+            DataTable PasajeroSearched = Obj.Search_pasajero(Data);
+
             switch (Where) {
-               case "pasajeros":
-                   txtpsjdni.Text = PasajeroSearched.Rows[4].ToString();
-                   txtpsjname.Text = PasajeroSearched.Rows[3].ToString();
-                   txtpsjnameape.Text = PasajeroSearched.Rows[2].ToString();
-                   txtpsjedad.Text = PasajeroSearched.Rows[1].ToString();
+                case "pasajeros":
+                    txtpsjdni.Text = PasajeroSearched.Rows[4].ToString();
+                    txtpsjname.Text = PasajeroSearched.Rows[3].ToString();
+                    txtpsjnameape.Text = PasajeroSearched.Rows[2].ToString();
+                    txtpsjedad.Text = PasajeroSearched.Rows[1].ToString();
 
-                   txtpsjid.Text = PasajeroSearched.Rows[0].ToString();
-                   
-                   break;
-               
-               default:
-                   //comprador
-                  txtclidni.Text = PasajeroSearched.Rows[4].ToString();
-                   txtcliname.Text = PasajeroSearched.Rows[4].ToString();
-                   txtclinameape.Text = PasajeroSearched.Rows[4].ToString();
-                   txtcliedad.Text = PasajeroSearched.Rows[4].ToString();
-                   txtcliid.Text = PasajeroSearched.Rows[0].ToString();
-                   
-                   break;
-           } 
+                    txtpsjid.Text = PasajeroSearched.Rows[0].ToString();
+
+                    break;
+
+                default:
+                    //comprador
+                    txtclidni.Text = PasajeroSearched.Rows[4].ToString();
+                    txtcliname.Text = PasajeroSearched.Rows[4].ToString();
+                    txtclinameape.Text = PasajeroSearched.Rows[4].ToString();
+                    txtcliedad.Text = PasajeroSearched.Rows[4].ToString();
+                    txtcliid.Text = PasajeroSearched.Rows[0].ToString();
+
+                    break;
+            }
         }
 
 
@@ -247,11 +250,11 @@ namespace CapaPresentacion
             string valoruno = Convert.ToString(fila_selected.Cells[0].Value);
             string valordos = Convert.ToString(fila_selected.Cells[1].Value);
             string valortress = Convert.ToString(fila_selected.Cells[2].Value);
-            string valorcuatro = Convert.ToString(fila_selected.Cells[3].Value); 
+            string valorcuatro = Convert.ToString(fila_selected.Cells[3].Value);
             string valorcinco = Convert.ToString(fila_selected.Cells[4].Value);
 
             string valorseis = Convert.ToString(fila_selected.Cells[5].Value);
-            
+
             txtcliid.Text = valoruno;
             txtclidni.Text = valordos;
             txtcliname.Text = valortress;
@@ -266,7 +269,7 @@ namespace CapaPresentacion
         {
             //se obtiene info del row selecionado
             DataGridViewRow fila_selected = tableciudadeshotels.CurrentRow;
-            txtciudadhotel.Text = Convert.ToString(fila_selected.Cells[1].Value);   
+            txtciudadhotel.Text = Convert.ToString(fila_selected.Cells[1].Value);
         }
 
         private void tableciudadestransportes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -351,7 +354,7 @@ namespace CapaPresentacion
             llenartabladetallesventa();
             limpiarcampospasajero();
 
-       }
+        }
 
         private void btnpsjsave_Click(object sender, EventArgs e)
         {
@@ -363,7 +366,7 @@ namespace CapaPresentacion
                 ClienteController Obj = new ClienteController();
                 ClienteController Data = new ClienteController();
                 Data.Pasajero_id = txtpsjid.Text;
-               
+
                 Data.Pasajero_dni = txtpsjdni.Text;
                 Data.Pasajero_edad = txtpsjedad.Text;
                 Data.Pasajero_last_name = txtpsjnameape.Text;
@@ -395,9 +398,9 @@ namespace CapaPresentacion
                             MessageBox.Show("Escojer otro tipo de asiento");
                             breake = 1;
                         }
-                      
 
-                    }else {
+
+                    } else {
 
                         MessageBox.Show("Escojer el tipo de asiento ");
                         breake = 1;
@@ -425,7 +428,7 @@ namespace CapaPresentacion
                     //MessageBox.Show(obj.Insert(data));
 
                 }
-               
+
             }
             else
             {
@@ -442,8 +445,8 @@ namespace CapaPresentacion
 
             ClienteController data = new ClienteController();
             data.Pasajero_id = txtvencliid.Text;
-            DataTable ClienteComprador =  Obj.List(data);
-           
+            DataTable ClienteComprador = Obj.List(data);
+
             txtpsjdni.Text = ClienteComprador.Rows[0]["pasajero_dni"].ToString();
             txtpsjname.Text = ClienteComprador.Rows[0]["pasajero_name"].ToString();
             txtpsjnameape.Text = ClienteComprador.Rows[0]["pasajero_last_name"].ToString();
@@ -493,9 +496,9 @@ namespace CapaPresentacion
             VentaController Data_total = new VentaController();
             Data_total.Ventas_id = txtvenid.Text;
 
-            Data_v.Venta_sub_total = (Obj_v.Get_total_venta(Data_total)).ToString().Replace(',','.');
-            Data_v.Venta_total = (  Double.Parse(Obj_v.Get_total_venta(Data_total)) * 1.18).ToString().Replace(',', '.');
-            
+            Data_v.Venta_sub_total = (Obj_v.Get_total_venta(Data_total)).ToString().Replace(',', '.');
+            Data_v.Venta_total = (Double.Parse(Obj_v.Get_total_venta(Data_total)) * 1.18).ToString().Replace(',', '.');
+
             string id_venta_de = Obj_v.Insert(Data_v);
             txtvenid.Text = id_venta_de;
 
@@ -566,7 +569,7 @@ namespace CapaPresentacion
                 else {
 
                     txtpsjid.Text = "0";
-                    txtpsjname.Text ="";
+                    txtpsjname.Text = "";
                     txtpsjnameape.Text = "";
                     txtpsjedad.Text = "";
                     btnstatussave();
@@ -577,8 +580,8 @@ namespace CapaPresentacion
 
         private void txtclidni_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) )
-             {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
                 e.Handled = true;
             }
         }
@@ -618,7 +621,7 @@ namespace CapaPresentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
             if (textciudadhotelbuscarhotel.Text == "")
             {
                 llenartablaciudadeshotel();
@@ -650,12 +653,192 @@ namespace CapaPresentacion
             }
         }
 
+
+        System.IO.StreamReader fileToPrint;
+        System.Drawing.Font printFont;
+
+        private System.IO.Stream streamToPrint;
+        string streamType;
+
+        //Bitmap btm;
+
+
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
+        }
+
+        //private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        //{
+
+        //    //e.Graphics.DrawImage(btm, 0, 0);
+
+
+        //    System.Drawing.Image image = System.Drawing.Image.FromStream(this.streamToPrint);
+        //    int x = e.MarginBounds.X;
+        //    int y = e.MarginBounds.Y;
+        //    int width = image.Width;
+        //    int height = image.Height;
+        //    if ((width / e.MarginBounds.Width) > (height / e.MarginBounds.Height))
+        //    {
+        //        width = e.MarginBounds.Width;
+        //        height = image.Height * e.MarginBounds.Width / image.Width;
+        //    }
+        //    else
+        //    {
+        //        height = e.MarginBounds.Height;
+        //        width = image.Width * e.MarginBounds.Height / image.Height;
+        //    }
+        //    System.Drawing.Rectangle destRect = new System.Drawing.Rectangle(x, y, width, height);
+        //    e.Graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, System.Drawing.GraphicsUnit.Pixel);
+
+
+
+        //    //float yPos = 0f;
+        //    //int count = 0;
+        //    //float leftMargin = e.MarginBounds.Left;
+        //    //float topMargin = e.MarginBounds.Top;
+        //    //string line = null;
+        //    //float linesPerPage = e.MarginBounds.Height / printFont.GetHeight(e.Graphics);
+        //    //while (count < linesPerPage)
+        //    //{
+        //    //    line = fileToPrint.ReadLine();
+        //    //    if (line == null)
+        //    //    {
+        //    //        break;
+        //    //    }
+        //    //    yPos = topMargin + count * printFont.GetHeight(e.Graphics);
+        //    //    e.Graphics.DrawString(line, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+        //    //    count++;
+        //    //}
+        //    //if (line != null)
+        //    //{
+        //    //    e.HasMorePages = true;
+        //    //}
+        //}
+        [System.Runtime.InteropServices.DllImportAttribute("gdi32.dll")]
+        private static extern bool BitBlt
+        (
+            int nXDest, // handle to destination DC
+        int nYDest, // x-coord of destination upper-left corner
+        int nWidth, // y-coord of destination upper-left corner
+        IntPtr hdcDest, // width of destination rectangle
+        int nHeight, // height of destination rectangle
+        IntPtr hdcSrc, // handle to source DC
+        int nXSrc, // x-coordinate of source upper-left corner
+        int nYSrc, // y-coordinate of source upper-left corner
+        System.Int32 dwRop // raster operation code
+        );
+        public void StartPrint(Stream streamToPrint, string streamType)
+        {
+            this.printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+            this.streamToPrint = streamToPrint;
+            this.streamType = streamType;
+            System.Windows.Forms.PrintDialog PrintDialog1 = new PrintDialog();
+            PrintDialog1.AllowSomePages = true;
+            PrintDialog1.ShowHelp = true;
+            PrintDialog1.Document = printDocument1;
+            DialogResult result = PrintDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                printDocument1.Print();
+                //docToPrint.Print();
+            }
+        }
+
+        //private void button8_Click(object sender, EventArgs e)
+        //{
+        //    Graphics g1 = this.CreateGraphics();
+        //    Image MyImage = new Bitmap(this.Size.Width, this.Size.Height, g1);
+        //    Graphics g2 = Graphics.FromImage(MyImage);
+        //    IntPtr dc1 = g1.GetHdc();
+        //    IntPtr dc2 = g2.GetHdc();
+        //    BitBlt(0, 0, this.ClientRectangle.Width, dc2, this.ClientRectangle.Height, dc1, 0, 0, 13369376);
+        //    g1.ReleaseHdc(dc1);
+        //    g2.ReleaseHdc(dc2);
+
+
+        //    //const string i1Path = @"c:\my\i1.jpg";
+        //    //const string i2Path = @"c:\my\i2.jpg";
+
+        //    //var i = Image.FromFile(i1Path);
+
+        //    //var i2 = new Bitmap(i);
+        //    //i2.Save(i2Path, ImageFormat.Jpeg);
+
+        //    //File.WriteAllBytes(@"c:\PrintPage.jpg", MyImage);
+        //    MyImage.Save(@"c:\test\PrintPage.jpg", ImageFormat.Jpeg);
+
+        //    FileStream fileStream = new FileStream(@"c:\test\PrintPage.jpg", FileMode.Open, FileAccess.Read);
+        //    StartPrint(fileStream, "Image");
+        //    fileStream.Close();
+        //    if (System.IO.File.Exists(@"c:\test\PrintPage.jpg"))
+        //    {
+        //        System.IO.File.Delete(@"c:\test\PrintPage.jpg");
+        //    }
+
+
+
+            //Graphics g = this.CreateGraphics();
+            //btm = new Bitmap(this.Size.Width, this.Size.Height,g);
+
+            //Graphics mg = Graphics.FromImage(btm);
+            //mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
+            //printPreviewDialog1.ShowDialog();
+
+
+
+            //string printPath = System.Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            //fileToPrint = new System.IO.StreamReader(printPath + @"\myFile.txt");
+            //printFont = new System.Drawing.Font("Arial", 10);
+            //printDocument1.Print();
+            //fileToPrint.Close();
+        //}
+
+        private void FrmVentas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        public static extern long BitBlt(IntPtr hdcDest,
+        int nXDest, int nYDest, int nWidth, int nHeight,
+        IntPtr hdcSrc, int nXSrc, int nYSrc, int dwRop);
+        private Bitmap memoryImage;
+        private void CaptureScreen()
+        {
+            Graphics mygraphics = this.CreateGraphics();
+            Size s = this.Size;
+            memoryImage = new Bitmap(s.Width, s.Height,
+            mygraphics);
+            Graphics memoryGraphics = Graphics.FromImage(
+            memoryImage);
+            IntPtr dc1 = mygraphics.GetHdc();
+            IntPtr dc2 = memoryGraphics.GetHdc();
+            BitBlt(dc2, 0, 0, this.ClientRectangle.Width,
+            this.ClientRectangle.Height, dc1, 0, 0,
+            13369376);
+            mygraphics.ReleaseHdc(dc1);
+            memoryGraphics.ReleaseHdc(dc2);
+        }
+
+        private void printDocument1_PrintPage(System.Object
+        sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(memoryImage, 0, 0);
+        }
+
+        private void button8_Click(System.Object sender,
+        System.EventArgs e)
+        {
+            CaptureScreen();
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.Show();
         }
     }
 }

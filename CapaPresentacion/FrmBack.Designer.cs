@@ -30,6 +30,7 @@
         {
             this.TabControlFrmBack = new System.Windows.Forms.TabControl();
             this.tabagencias = new System.Windows.Forms.TabPage();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.btnagenciaaddtransporte = new System.Windows.Forms.Button();
             this.btnagenciaaddhotel = new System.Windows.Forms.Button();
             this.btnageclear = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@
             this.btntransaddcrono = new System.Windows.Forms.Button();
             this.btntransclear = new System.Windows.Forms.Button();
             this.btntranssave = new System.Windows.Forms.Button();
-            this.btntransbuscar = new System.Windows.Forms.Button();
             this.tabletransporte = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -108,6 +108,7 @@
             this.btnclassclear = new System.Windows.Forms.Button();
             this.btnclasssave = new System.Windows.Forms.Button();
             this.btnclassdel = new System.Windows.Forms.Button();
+            this.btnclassbucar = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtclasasientos = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -127,8 +128,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.tableciudades = new System.Windows.Forms.DataGridView();
-            this.btnlogout = new System.Windows.Forms.Button();
-            this.btnclassbucar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.TabControlFrmBack.SuspendLayout();
             this.tabagencias.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -160,7 +161,7 @@
             this.TabControlFrmBack.Location = new System.Drawing.Point(-1, 1);
             this.TabControlFrmBack.Name = "TabControlFrmBack";
             this.TabControlFrmBack.SelectedIndex = 0;
-            this.TabControlFrmBack.Size = new System.Drawing.Size(813, 543);
+            this.TabControlFrmBack.Size = new System.Drawing.Size(813, 585);
             this.TabControlFrmBack.TabIndex = 0;
             // 
             // tabagencias
@@ -177,10 +178,21 @@
             this.tabagencias.Location = new System.Drawing.Point(4, 22);
             this.tabagencias.Name = "tabagencias";
             this.tabagencias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabagencias.Size = new System.Drawing.Size(805, 517);
+            this.tabagencias.Size = new System.Drawing.Size(805, 559);
             this.tabagencias.TabIndex = 0;
             this.tabagencias.Text = "Agencias";
             this.tabagencias.UseVisualStyleBackColor = true;
+            // 
+            // btnlogout
+            // 
+            this.btnlogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.Location = new System.Drawing.Point(636, 497);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(148, 38);
+            this.btnlogout.TabIndex = 14;
+            this.btnlogout.Text = "LogOut";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // btnagenciaaddtransporte
             // 
@@ -196,7 +208,7 @@
             // btnagenciaaddhotel
             // 
             this.btnagenciaaddhotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagenciaaddhotel.Location = new System.Drawing.Point(550, 286);
+            this.btnagenciaaddhotel.Location = new System.Drawing.Point(550, 396);
             this.btnagenciaaddhotel.Name = "btnagenciaaddhotel";
             this.btnagenciaaddhotel.Size = new System.Drawing.Size(148, 38);
             this.btnagenciaaddhotel.TabIndex = 12;
@@ -207,7 +219,7 @@
             // btnageclear
             // 
             this.btnageclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnageclear.Location = new System.Drawing.Point(550, 217);
+            this.btnageclear.Location = new System.Drawing.Point(550, 243);
             this.btnageclear.Name = "btnageclear";
             this.btnageclear.Size = new System.Drawing.Size(148, 38);
             this.btnageclear.TabIndex = 11;
@@ -218,9 +230,9 @@
             // btnagesave
             // 
             this.btnagesave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagesave.Location = new System.Drawing.Point(515, 133);
+            this.btnagesave.Location = new System.Drawing.Point(515, 194);
             this.btnagesave.Name = "btnagesave";
-            this.btnagesave.Size = new System.Drawing.Size(183, 69);
+            this.btnagesave.Size = new System.Drawing.Size(183, 34);
             this.btnagesave.TabIndex = 10;
             this.btnagesave.Text = "CREAR";
             this.btnagesave.UseVisualStyleBackColor = true;
@@ -229,7 +241,7 @@
             // btnagedel
             // 
             this.btnagedel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagedel.Location = new System.Drawing.Point(571, 84);
+            this.btnagedel.Location = new System.Drawing.Point(571, 145);
             this.btnagedel.Name = "btnagedel";
             this.btnagedel.Size = new System.Drawing.Size(127, 38);
             this.btnagedel.TabIndex = 9;
@@ -240,7 +252,7 @@
             // btnageniasearch
             // 
             this.btnageniasearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnageniasearch.Location = new System.Drawing.Point(571, 26);
+            this.btnageniasearch.Location = new System.Drawing.Point(571, 97);
             this.btnageniasearch.Name = "btnageniasearch";
             this.btnageniasearch.Size = new System.Drawing.Size(127, 38);
             this.btnageniasearch.TabIndex = 8;
@@ -258,7 +270,7 @@
             this.groupBox1.Controls.Add(this.txtagencianame);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(71, 26);
+            this.groupBox1.Location = new System.Drawing.Point(71, 84);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(426, 229);
             this.groupBox1.TabIndex = 7;
@@ -332,7 +344,7 @@
             // tableagencias
             // 
             this.tableagencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableagencias.Location = new System.Drawing.Point(71, 304);
+            this.tableagencias.Location = new System.Drawing.Point(71, 352);
             this.tableagencias.Name = "tableagencias";
             this.tableagencias.Size = new System.Drawing.Size(432, 183);
             this.tableagencias.TabIndex = 6;
@@ -340,6 +352,7 @@
             // 
             // tabhoteles
             // 
+            this.tabhoteles.Controls.Add(this.button1);
             this.tabhoteles.Controls.Add(this.btnhotelclear);
             this.tabhoteles.Controls.Add(this.btnhotelsave);
             this.tabhoteles.Controls.Add(this.btnhoteldel);
@@ -349,7 +362,7 @@
             this.tabhoteles.Location = new System.Drawing.Point(4, 22);
             this.tabhoteles.Name = "tabhoteles";
             this.tabhoteles.Padding = new System.Windows.Forms.Padding(3);
-            this.tabhoteles.Size = new System.Drawing.Size(805, 517);
+            this.tabhoteles.Size = new System.Drawing.Size(805, 559);
             this.tabhoteles.TabIndex = 1;
             this.tabhoteles.Text = "Hoteles";
             this.tabhoteles.UseVisualStyleBackColor = true;
@@ -357,7 +370,7 @@
             // btnhotelclear
             // 
             this.btnhotelclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhotelclear.Location = new System.Drawing.Point(545, 221);
+            this.btnhotelclear.Location = new System.Drawing.Point(545, 260);
             this.btnhotelclear.Name = "btnhotelclear";
             this.btnhotelclear.Size = new System.Drawing.Size(148, 38);
             this.btnhotelclear.TabIndex = 11;
@@ -368,9 +381,9 @@
             // btnhotelsave
             // 
             this.btnhotelsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhotelsave.Location = new System.Drawing.Point(510, 137);
+            this.btnhotelsave.Location = new System.Drawing.Point(510, 213);
             this.btnhotelsave.Name = "btnhotelsave";
-            this.btnhotelsave.Size = new System.Drawing.Size(183, 69);
+            this.btnhotelsave.Size = new System.Drawing.Size(183, 32);
             this.btnhotelsave.TabIndex = 10;
             this.btnhotelsave.Text = "CREAR";
             this.btnhotelsave.UseVisualStyleBackColor = true;
@@ -379,7 +392,7 @@
             // btnhoteldel
             // 
             this.btnhoteldel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhoteldel.Location = new System.Drawing.Point(566, 88);
+            this.btnhoteldel.Location = new System.Drawing.Point(566, 154);
             this.btnhoteldel.Name = "btnhoteldel";
             this.btnhoteldel.Size = new System.Drawing.Size(127, 38);
             this.btnhoteldel.TabIndex = 9;
@@ -390,7 +403,7 @@
             // btnhotelbuscar
             // 
             this.btnhotelbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhotelbuscar.Location = new System.Drawing.Point(566, 30);
+            this.btnhotelbuscar.Location = new System.Drawing.Point(566, 100);
             this.btnhotelbuscar.Name = "btnhotelbuscar";
             this.btnhotelbuscar.Size = new System.Drawing.Size(127, 38);
             this.btnhotelbuscar.TabIndex = 8;
@@ -413,7 +426,7 @@
             this.groupBox2.Controls.Add(this.txthotelname);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(66, 30);
+            this.groupBox2.Location = new System.Drawing.Point(66, 78);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(426, 229);
             this.groupBox2.TabIndex = 7;
@@ -537,7 +550,7 @@
             // tablehotel
             // 
             this.tablehotel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablehotel.Location = new System.Drawing.Point(66, 315);
+            this.tablehotel.Location = new System.Drawing.Point(66, 348);
             this.tablehotel.Name = "tablehotel";
             this.tablehotel.Size = new System.Drawing.Size(627, 183);
             this.tablehotel.TabIndex = 6;
@@ -545,17 +558,17 @@
             // 
             // tabtransportes
             // 
+            this.tabtransportes.Controls.Add(this.button6);
             this.tabtransportes.Controls.Add(this.btntransaddclass);
             this.tabtransportes.Controls.Add(this.btntransaddcrono);
             this.tabtransportes.Controls.Add(this.btntransclear);
             this.tabtransportes.Controls.Add(this.btntranssave);
-            this.tabtransportes.Controls.Add(this.btntransbuscar);
             this.tabtransportes.Controls.Add(this.tabletransporte);
             this.tabtransportes.Controls.Add(this.groupBox3);
             this.tabtransportes.Controls.Add(this.btntransdel);
             this.tabtransportes.Location = new System.Drawing.Point(4, 22);
             this.tabtransportes.Name = "tabtransportes";
-            this.tabtransportes.Size = new System.Drawing.Size(805, 517);
+            this.tabtransportes.Size = new System.Drawing.Size(805, 559);
             this.tabtransportes.TabIndex = 2;
             this.tabtransportes.Text = "Transportes";
             this.tabtransportes.UseVisualStyleBackColor = true;
@@ -563,7 +576,7 @@
             // btntransaddclass
             // 
             this.btntransaddclass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntransaddclass.Location = new System.Drawing.Point(551, 231);
+            this.btntransaddclass.Location = new System.Drawing.Point(562, 291);
             this.btntransaddclass.Name = "btntransaddclass";
             this.btntransaddclass.Size = new System.Drawing.Size(176, 38);
             this.btntransaddclass.TabIndex = 19;
@@ -574,7 +587,7 @@
             // btntransaddcrono
             // 
             this.btntransaddcrono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntransaddcrono.Location = new System.Drawing.Point(551, 187);
+            this.btntransaddcrono.Location = new System.Drawing.Point(562, 247);
             this.btntransaddcrono.Name = "btntransaddcrono";
             this.btntransaddcrono.Size = new System.Drawing.Size(176, 38);
             this.btntransaddcrono.TabIndex = 18;
@@ -585,7 +598,7 @@
             // btntransclear
             // 
             this.btntransclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntransclear.Location = new System.Drawing.Point(551, 143);
+            this.btntransclear.Location = new System.Drawing.Point(562, 193);
             this.btntransclear.Name = "btntransclear";
             this.btntransclear.Size = new System.Drawing.Size(176, 38);
             this.btntransclear.TabIndex = 17;
@@ -596,7 +609,7 @@
             // btntranssave
             // 
             this.btntranssave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntranssave.Location = new System.Drawing.Point(514, 105);
+            this.btntranssave.Location = new System.Drawing.Point(525, 147);
             this.btntranssave.Name = "btntranssave";
             this.btntranssave.Size = new System.Drawing.Size(213, 32);
             this.btntranssave.TabIndex = 16;
@@ -604,20 +617,10 @@
             this.btntranssave.UseVisualStyleBackColor = true;
             this.btntranssave.Click += new System.EventHandler(this.btntranssave_Click);
             // 
-            // btntransbuscar
-            // 
-            this.btntransbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntransbuscar.Location = new System.Drawing.Point(562, 29);
-            this.btntransbuscar.Name = "btntransbuscar";
-            this.btntransbuscar.Size = new System.Drawing.Size(165, 26);
-            this.btntransbuscar.TabIndex = 14;
-            this.btntransbuscar.Text = "BUSCAR";
-            this.btntransbuscar.UseVisualStyleBackColor = true;
-            // 
             // tabletransporte
             // 
             this.tabletransporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabletransporte.Location = new System.Drawing.Point(62, 320);
+            this.tabletransporte.Location = new System.Drawing.Point(62, 356);
             this.tabletransporte.Name = "tabletransporte";
             this.tabletransporte.Size = new System.Drawing.Size(665, 175);
             this.tabletransporte.TabIndex = 12;
@@ -641,7 +644,7 @@
             this.groupBox3.Controls.Add(this.txttransid);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(62, 29);
+            this.groupBox3.Location = new System.Drawing.Point(62, 74);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(426, 259);
             this.groupBox3.TabIndex = 13;
@@ -799,7 +802,7 @@
             // btntransdel
             // 
             this.btntransdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntransdel.Location = new System.Drawing.Point(562, 61);
+            this.btntransdel.Location = new System.Drawing.Point(573, 96);
             this.btntransdel.Name = "btntransdel";
             this.btntransdel.Size = new System.Drawing.Size(165, 38);
             this.btntransdel.TabIndex = 15;
@@ -1025,6 +1028,17 @@
             this.btnclassdel.UseVisualStyleBackColor = true;
             this.btnclassdel.Visible = false;
             // 
+            // btnclassbucar
+            // 
+            this.btnclassbucar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclassbucar.Location = new System.Drawing.Point(623, 32);
+            this.btnclassbucar.Name = "btnclassbucar";
+            this.btnclassbucar.Size = new System.Drawing.Size(127, 38);
+            this.btnclassbucar.TabIndex = 19;
+            this.btnclassbucar.Text = "BUSCAR";
+            this.btnclassbucar.UseVisualStyleBackColor = true;
+            this.btnclassbucar.Visible = false;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.txtclasasientos);
@@ -1226,33 +1240,33 @@
             this.tableciudades.TabIndex = 23;
             this.tableciudades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableciudades_CellContentClick);
             // 
-            // btnlogout
+            // button1
             // 
-            this.btnlogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogout.Location = new System.Drawing.Point(633, 449);
-            this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(148, 38);
-            this.btnlogout.TabIndex = 14;
-            this.btnlogout.Text = "LogOut";
-            this.btnlogout.UseVisualStyleBackColor = true;
-            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(716, 260);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(66, 38);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Atrás";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
-            // btnclassbucar
+            // button6
             // 
-            this.btnclassbucar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclassbucar.Location = new System.Drawing.Point(623, 32);
-            this.btnclassbucar.Name = "btnclassbucar";
-            this.btnclassbucar.Size = new System.Drawing.Size(127, 38);
-            this.btnclassbucar.TabIndex = 19;
-            this.btnclassbucar.Text = "BUSCAR";
-            this.btnclassbucar.UseVisualStyleBackColor = true;
-            this.btnclassbucar.Visible = false;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(672, 52);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(66, 38);
+            this.button6.TabIndex = 20;
+            this.button6.Text = "Atrás";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // FrmBack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 543);
+            this.ClientSize = new System.Drawing.Size(812, 583);
             this.Controls.Add(this.TabControlFrmBack);
             this.Name = "FrmBack";
             this.Text = "FrmBack";
@@ -1323,7 +1337,6 @@
         private System.Windows.Forms.Label txthotelagencianame;
         private System.Windows.Forms.Button btntransclear;
         private System.Windows.Forms.Button btntranssave;
-        private System.Windows.Forms.Button btntransbuscar;
         private System.Windows.Forms.DataGridView tabletransporte;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label txttransagenciid;
@@ -1387,5 +1400,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnlogout;
         private System.Windows.Forms.Button btnclassbucar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button6;
     }
 }

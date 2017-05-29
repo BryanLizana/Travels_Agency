@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVentas));
             this.TabControlFrmVentas = new System.Windows.Forms.TabControl();
             this.tabclientes = new System.Windows.Forms.TabPage();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.btncliclear = new System.Windows.Forms.Button();
             this.btnclisave = new System.Windows.Forms.Button();
             this.btnclidel = new System.Windows.Forms.Button();
@@ -48,7 +50,6 @@
             this.tabventas = new System.Windows.Forms.TabPage();
             this.txtvenid = new System.Windows.Forms.Label();
             this.txtventype = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -66,6 +67,7 @@
             this.btnvenaddtransid = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtventransorigen = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.txtvenuserid = new System.Windows.Forms.Label();
             this.txtvenusername = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -78,6 +80,8 @@
             this.txtvenclidni = new System.Windows.Forms.Label();
             this.txtvencliname = new System.Windows.Forms.Label();
             this.tabciudadestrans = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtciudadtrasnpote = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -116,11 +120,12 @@
             this.txtpsjdni = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabListVentas = new System.Windows.Forms.TabPage();
-            this.tablelistventas = new System.Windows.Forms.DataGridView();
-            this.btnlogout = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.tablelistventadetalle = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.tablelistventas = new System.Windows.Forms.DataGridView();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.tabBoletos = new System.Windows.Forms.TabPage();
             this.TabControlFrmVentas.SuspendLayout();
             this.tabclientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableclientes)).BeginInit();
@@ -139,8 +144,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableventadetalles)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.tabListVentas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablelistventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablelistventadetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablelistventas)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControlFrmVentas
@@ -151,10 +156,11 @@
             this.TabControlFrmVentas.Controls.Add(this.tabciudadeshotel);
             this.TabControlFrmVentas.Controls.Add(this.tabPasajeros);
             this.TabControlFrmVentas.Controls.Add(this.tabListVentas);
+            this.TabControlFrmVentas.Controls.Add(this.tabBoletos);
             this.TabControlFrmVentas.Location = new System.Drawing.Point(0, 1);
             this.TabControlFrmVentas.Name = "TabControlFrmVentas";
             this.TabControlFrmVentas.SelectedIndex = 0;
-            this.TabControlFrmVentas.Size = new System.Drawing.Size(823, 584);
+            this.TabControlFrmVentas.Size = new System.Drawing.Size(823, 622);
             this.TabControlFrmVentas.TabIndex = 0;
             // 
             // tabclientes
@@ -169,15 +175,26 @@
             this.tabclientes.Location = new System.Drawing.Point(4, 22);
             this.tabclientes.Name = "tabclientes";
             this.tabclientes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabclientes.Size = new System.Drawing.Size(815, 558);
+            this.tabclientes.Size = new System.Drawing.Size(815, 596);
             this.tabclientes.TabIndex = 0;
             this.tabclientes.Text = "Clientes";
             this.tabclientes.UseVisualStyleBackColor = true;
             // 
+            // btnlogout
+            // 
+            this.btnlogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogout.Location = new System.Drawing.Point(658, 549);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(148, 38);
+            this.btnlogout.TabIndex = 15;
+            this.btnlogout.Text = "LogOut";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            // 
             // btncliclear
             // 
             this.btncliclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncliclear.Location = new System.Drawing.Point(573, 218);
+            this.btncliclear.Location = new System.Drawing.Point(573, 276);
             this.btncliclear.Name = "btncliclear";
             this.btncliclear.Size = new System.Drawing.Size(148, 38);
             this.btncliclear.TabIndex = 10;
@@ -188,9 +205,9 @@
             // btnclisave
             // 
             this.btnclisave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclisave.Location = new System.Drawing.Point(538, 134);
+            this.btnclisave.Location = new System.Drawing.Point(538, 227);
             this.btnclisave.Name = "btnclisave";
-            this.btnclisave.Size = new System.Drawing.Size(183, 69);
+            this.btnclisave.Size = new System.Drawing.Size(183, 31);
             this.btnclisave.TabIndex = 9;
             this.btnclisave.Text = "CREAR";
             this.btnclisave.UseVisualStyleBackColor = true;
@@ -199,7 +216,7 @@
             // btnclidel
             // 
             this.btnclidel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclidel.Location = new System.Drawing.Point(594, 85);
+            this.btnclidel.Location = new System.Drawing.Point(594, 177);
             this.btnclidel.Name = "btnclidel";
             this.btnclidel.Size = new System.Drawing.Size(127, 38);
             this.btnclidel.TabIndex = 8;
@@ -209,7 +226,7 @@
             // btnclibuscar
             // 
             this.btnclibuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclibuscar.Location = new System.Drawing.Point(594, 27);
+            this.btnclibuscar.Location = new System.Drawing.Point(594, 126);
             this.btnclibuscar.Name = "btnclibuscar";
             this.btnclibuscar.Size = new System.Drawing.Size(127, 38);
             this.btnclibuscar.TabIndex = 7;
@@ -220,7 +237,7 @@
             // tableclientes
             // 
             this.tableclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableclientes.Location = new System.Drawing.Point(34, 287);
+            this.tableclientes.Location = new System.Drawing.Point(34, 348);
             this.tableclientes.Name = "tableclientes";
             this.tableclientes.Size = new System.Drawing.Size(687, 183);
             this.tableclientes.TabIndex = 6;
@@ -238,7 +255,7 @@
             this.groupBox1.Controls.Add(this.txtclidni);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(34, 25);
+            this.groupBox1.Location = new System.Drawing.Point(34, 85);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(426, 229);
             this.groupBox1.TabIndex = 2;
@@ -333,7 +350,6 @@
             // 
             this.tabventas.Controls.Add(this.txtvenid);
             this.tabventas.Controls.Add(this.txtventype);
-            this.tabventas.Controls.Add(this.button7);
             this.tabventas.Controls.Add(this.button6);
             this.tabventas.Controls.Add(this.groupBox3);
             this.tabventas.Controls.Add(this.txtvenuserid);
@@ -346,7 +362,7 @@
             this.tabventas.Location = new System.Drawing.Point(4, 22);
             this.tabventas.Name = "tabventas";
             this.tabventas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabventas.Size = new System.Drawing.Size(815, 558);
+            this.tabventas.Size = new System.Drawing.Size(815, 596);
             this.tabventas.TabIndex = 1;
             this.tabventas.Text = "Venta";
             this.tabventas.UseVisualStyleBackColor = true;
@@ -368,26 +384,15 @@
             this.txtventype.Items.AddRange(new object[] {
             "COMPRANORMAL",
             "RESERVA"});
-            this.txtventype.Location = new System.Drawing.Point(637, 265);
+            this.txtventype.Location = new System.Drawing.Point(637, 455);
             this.txtventype.Name = "txtventype";
             this.txtventype.Size = new System.Drawing.Size(163, 28);
             this.txtventype.TabIndex = 17;
             // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(637, 220);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(167, 36);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "Añadir Pasajeros";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(628, 435);
+            this.button6.Location = new System.Drawing.Point(637, 513);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(167, 36);
             this.button6.TabIndex = 15;
@@ -399,10 +404,11 @@
             // 
             this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.groupBox4);
+            this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 155);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(555, 316);
+            this.groupBox3.Size = new System.Drawing.Size(555, 416);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles de compra";
@@ -415,7 +421,7 @@
             this.groupBox5.Controls.Add(this.txtvenaddhotelid);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.txtvenhotelorigen);
-            this.groupBox5.Location = new System.Drawing.Point(86, 182);
+            this.groupBox5.Location = new System.Drawing.Point(71, 259);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(438, 119);
             this.groupBox5.TabIndex = 16;
@@ -436,7 +442,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(318, 87);
+            this.button5.Location = new System.Drawing.Point(335, 87);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(88, 26);
             this.button5.TabIndex = 18;
@@ -460,7 +466,7 @@
             this.txtvenaddhotelid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtvenaddhotelid.Location = new System.Drawing.Point(355, 41);
             this.txtvenaddhotelid.Name = "txtvenaddhotelid";
-            this.txtvenaddhotelid.Size = new System.Drawing.Size(36, 26);
+            this.txtvenaddhotelid.Size = new System.Drawing.Size(51, 26);
             this.txtvenaddhotelid.TabIndex = 16;
             this.txtvenaddhotelid.Text = "IR";
             this.txtvenaddhotelid.UseVisualStyleBackColor = true;
@@ -495,7 +501,7 @@
             this.groupBox4.Controls.Add(this.btnvenaddtransid);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.txtventransorigen);
-            this.groupBox4.Location = new System.Drawing.Point(86, 45);
+            this.groupBox4.Location = new System.Drawing.Point(71, 110);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(438, 119);
             this.groupBox4.TabIndex = 15;
@@ -550,7 +556,7 @@
             this.btnvenaddtransid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnvenaddtransid.Location = new System.Drawing.Point(355, 36);
             this.btnvenaddtransid.Name = "btnvenaddtransid";
-            this.btnvenaddtransid.Size = new System.Drawing.Size(36, 26);
+            this.btnvenaddtransid.Size = new System.Drawing.Size(51, 26);
             this.btnvenaddtransid.TabIndex = 15;
             this.btnvenaddtransid.Text = "IR";
             this.btnvenaddtransid.UseVisualStyleBackColor = true;
@@ -575,6 +581,17 @@
             this.txtventransorigen.Size = new System.Drawing.Size(73, 20);
             this.txtventransorigen.TabIndex = 4;
             this.txtventransorigen.Text = "ORIGEN";
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(342, 46);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(167, 36);
+            this.button7.TabIndex = 16;
+            this.button7.Text = "Añadir Pasajeros";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // txtvenuserid
             // 
@@ -701,16 +718,36 @@
             this.tabciudadestrans.Controls.Add(this.tableciudadestransportes);
             this.tabciudadestrans.Location = new System.Drawing.Point(4, 22);
             this.tabciudadestrans.Name = "tabciudadestrans";
-            this.tabciudadestrans.Size = new System.Drawing.Size(815, 558);
+            this.tabciudadestrans.Size = new System.Drawing.Size(815, 596);
             this.tabciudadestrans.TabIndex = 2;
             this.tabciudadestrans.Text = "Ciudades - Transporte";
             this.tabciudadestrans.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(381, 103);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 20);
+            this.label11.TabIndex = 38;
+            this.label11.Text = "Cantidad Psjs";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(508, 103);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(86, 26);
+            this.textBox1.TabIndex = 37;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // txtciudadtrasnpote
             // 
             this.txtciudadtrasnpote.AutoSize = true;
             this.txtciudadtrasnpote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtciudadtrasnpote.Location = new System.Drawing.Point(49, 404);
+            this.txtciudadtrasnpote.Location = new System.Drawing.Point(49, 504);
             this.txtciudadtrasnpote.Name = "txtciudadtrasnpote";
             this.txtciudadtrasnpote.Size = new System.Drawing.Size(80, 20);
             this.txtciudadtrasnpote.TabIndex = 36;
@@ -719,7 +756,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(473, 404);
+            this.button3.Location = new System.Drawing.Point(484, 504);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 33);
             this.button3.TabIndex = 34;
@@ -730,7 +767,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(188, 35);
+            this.button4.Location = new System.Drawing.Point(188, 100);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(115, 26);
             this.button4.TabIndex = 33;
@@ -741,7 +778,7 @@
             // textciudadtransbuscartrans
             // 
             this.textciudadtransbuscartrans.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textciudadtransbuscartrans.Location = new System.Drawing.Point(53, 35);
+            this.textciudadtransbuscartrans.Location = new System.Drawing.Point(53, 100);
             this.textciudadtransbuscartrans.Name = "textciudadtransbuscartrans";
             this.textciudadtransbuscartrans.Size = new System.Drawing.Size(119, 26);
             this.textciudadtransbuscartrans.TabIndex = 32;
@@ -749,7 +786,7 @@
             // tableciudadestransportes
             // 
             this.tableciudadestransportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableciudadestransportes.Location = new System.Drawing.Point(53, 85);
+            this.tableciudadestransportes.Location = new System.Drawing.Point(53, 173);
             this.tableciudadestransportes.Name = "tableciudadestransportes";
             this.tableciudadestransportes.Size = new System.Drawing.Size(541, 291);
             this.tableciudadestransportes.TabIndex = 31;
@@ -764,7 +801,7 @@
             this.tabciudadeshotel.Controls.Add(this.tableciudadeshotels);
             this.tabciudadeshotel.Location = new System.Drawing.Point(4, 22);
             this.tabciudadeshotel.Name = "tabciudadeshotel";
-            this.tabciudadeshotel.Size = new System.Drawing.Size(815, 558);
+            this.tabciudadeshotel.Size = new System.Drawing.Size(815, 596);
             this.tabciudadeshotel.TabIndex = 3;
             this.tabciudadeshotel.Text = "Ciudades - Hotel";
             this.tabciudadeshotel.UseVisualStyleBackColor = true;
@@ -773,7 +810,7 @@
             // 
             this.txtciudadhotel.AutoSize = true;
             this.txtciudadhotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtciudadhotel.Location = new System.Drawing.Point(278, 34);
+            this.txtciudadhotel.Location = new System.Drawing.Point(432, 121);
             this.txtciudadhotel.Name = "txtciudadhotel";
             this.txtciudadhotel.Size = new System.Drawing.Size(62, 20);
             this.txtciudadhotel.TabIndex = 41;
@@ -782,7 +819,7 @@
             // btnaddhotelciudad
             // 
             this.btnaddhotelciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaddhotelciudad.Location = new System.Drawing.Point(463, 416);
+            this.btnaddhotelciudad.Location = new System.Drawing.Point(463, 511);
             this.btnaddhotelciudad.Name = "btnaddhotelciudad";
             this.btnaddhotelciudad.Size = new System.Drawing.Size(121, 33);
             this.btnaddhotelciudad.TabIndex = 40;
@@ -793,7 +830,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(184, 28);
+            this.button2.Location = new System.Drawing.Point(181, 115);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(67, 26);
             this.button2.TabIndex = 39;
@@ -804,7 +841,7 @@
             // textciudadhotelbuscarhotel
             // 
             this.textciudadhotelbuscarhotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textciudadhotelbuscarhotel.Location = new System.Drawing.Point(45, 28);
+            this.textciudadhotelbuscarhotel.Location = new System.Drawing.Point(45, 115);
             this.textciudadhotelbuscarhotel.Name = "textciudadhotelbuscarhotel";
             this.textciudadhotelbuscarhotel.Size = new System.Drawing.Size(119, 26);
             this.textciudadhotelbuscarhotel.TabIndex = 38;
@@ -812,7 +849,7 @@
             // tableciudadeshotels
             // 
             this.tableciudadeshotels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableciudadeshotels.Location = new System.Drawing.Point(45, 85);
+            this.tableciudadeshotels.Location = new System.Drawing.Point(45, 172);
             this.tableciudadeshotels.Name = "tableciudadeshotels";
             this.tableciudadeshotels.Size = new System.Drawing.Size(539, 291);
             this.tableciudadeshotels.TabIndex = 37;
@@ -834,7 +871,7 @@
             this.tabPasajeros.Controls.Add(this.groupBox6);
             this.tabPasajeros.Location = new System.Drawing.Point(4, 22);
             this.tabPasajeros.Name = "tabPasajeros";
-            this.tabPasajeros.Size = new System.Drawing.Size(815, 558);
+            this.tabPasajeros.Size = new System.Drawing.Size(815, 596);
             this.tabPasajeros.TabIndex = 4;
             this.tabPasajeros.Text = "Pasajeros";
             this.tabPasajeros.UseVisualStyleBackColor = true;
@@ -1102,14 +1139,33 @@
             // 
             // tabListVentas
             // 
+            this.tabListVentas.Controls.Add(this.button8);
             this.tabListVentas.Controls.Add(this.tablelistventadetalle);
             this.tabListVentas.Controls.Add(this.tablelistventas);
             this.tabListVentas.Location = new System.Drawing.Point(4, 22);
             this.tabListVentas.Name = "tabListVentas";
-            this.tabListVentas.Size = new System.Drawing.Size(815, 558);
+            this.tabListVentas.Size = new System.Drawing.Size(815, 596);
             this.tabListVentas.TabIndex = 5;
             this.tabListVentas.Text = "Lista de Ventas";
             this.tabListVentas.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(714, 550);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(72, 19);
+            this.button8.TabIndex = 35;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // tablelistventadetalle
+            // 
+            this.tablelistventadetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablelistventadetalle.Location = new System.Drawing.Point(36, 319);
+            this.tablelistventadetalle.Name = "tablelistventadetalle";
+            this.tablelistventadetalle.Size = new System.Drawing.Size(729, 206);
+            this.tablelistventadetalle.TabIndex = 34;
             // 
             // tablelistventas
             // 
@@ -1120,53 +1176,38 @@
             this.tablelistventas.TabIndex = 33;
             this.tablelistventas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablelistventas_CellContentClick);
             // 
-            // btnlogout
+            // printDocument1
             // 
-            this.btnlogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogout.Location = new System.Drawing.Point(642, 499);
-            this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(148, 38);
-            this.btnlogout.TabIndex = 15;
-            this.btnlogout.Text = "LogOut";
-            this.btnlogout.UseVisualStyleBackColor = true;
-            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // tablelistventadetalle
+            // printPreviewDialog1
             // 
-            this.tablelistventadetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablelistventadetalle.Location = new System.Drawing.Point(36, 319);
-            this.tablelistventadetalle.Name = "tablelistventadetalle";
-            this.tablelistventadetalle.Size = new System.Drawing.Size(729, 206);
-            this.tablelistventadetalle.TabIndex = 34;
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
-            // textBox1
+            // tabBoletos
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(484, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(86, 26);
-            this.textBox1.TabIndex = 37;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(358, 41);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(106, 20);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "Cantidad Psjs";
+            this.tabBoletos.Location = new System.Drawing.Point(4, 22);
+            this.tabBoletos.Name = "tabBoletos";
+            this.tabBoletos.Size = new System.Drawing.Size(815, 596);
+            this.tabBoletos.TabIndex = 6;
+            this.tabBoletos.Text = "tabBoletos";
+            this.tabBoletos.UseVisualStyleBackColor = true;
             // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 582);
+            this.ClientSize = new System.Drawing.Size(822, 622);
             this.Controls.Add(this.TabControlFrmVentas);
             this.Name = "FrmVentas";
             this.Text = "FrmVentas";
+            this.Load += new System.EventHandler(this.FrmVentas_Load);
             this.TabControlFrmVentas.ResumeLayout(false);
             this.tabclientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableclientes)).EndInit();
@@ -1195,8 +1236,8 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tabListVentas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tablelistventas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablelistventadetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablelistventas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1296,5 +1337,9 @@
         private System.Windows.Forms.DataGridView tablelistventadetalle;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button8;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.TabPage tabBoletos;
     }
 }
