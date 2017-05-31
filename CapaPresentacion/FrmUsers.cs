@@ -63,9 +63,9 @@ namespace CapaPresentacion
         {
 
             if ( txtuserdni.Text != "" && txtuserpass.Text != ""  && 
-                txtusertype.SelectedItem.ToString() != "" &&
-                txtusernamafull.Text != "" &&
-                txtusertel.Text != "" 
+                txtusertype.SelectedItem.ToString() != ""
+                //txtusernamafull.Text != "" &&
+                //txtusertel.Text != "" 
                 )
             {
                 UserController Obj = new UserController();

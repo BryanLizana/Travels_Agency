@@ -654,8 +654,8 @@ namespace CapaPresentacion
         }
 
 
-        System.IO.StreamReader fileToPrint;
-        System.Drawing.Font printFont;
+        //System.IO.StreamReader fileToPrint;
+        //System.Drawing.Font printFont;
 
         private System.IO.Stream streamToPrint;
         string streamType;

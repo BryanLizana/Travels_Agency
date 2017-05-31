@@ -117,13 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnclibuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAARBJREFUWEft
+        loENwiAQRTuCo7iJjuAGuoluoBvpBrqBbqD/Jf0JaaJYjkpM+pIfKx58OA5sN/PvbKSjdJaevXimbSVN
+        xlq6SjZ9J2KIrcpBssFN2klLyfBMG785bi9VITXHJAcxjqdvCFLpwdIV5yDW/ULb4ZR+s/IhzgQ1UQTV
+        zgBMohQvoCgLJ6l09cZZYKzRXCQ6j9n7Ia4F7onR0BFFKR6n+QRcQDW2gO0cTfMi9DEsPscidAyhxkUU
+        uUfaX8UL6S55sK2UwytHoT8jzP3S8eg/ETXBRNKM8Exb+r5QzZwjxHdS6Zr4JGLCaR+ap3A6OFbpZIij
+        LWQMOfNJmc2bmIMvmybmhkk0M5/5MV33AmrFhf1vq725AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="printDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="printPreviewDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>158, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="printPreviewDialog1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAICAQAAAAAADoAgAAZgAAABAQEAAAAAAAKAEAAE4DAAAgIAAAAQAIAKgIAAB2BAAAEBAAAAEA

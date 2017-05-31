@@ -38,6 +38,8 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reportViewer1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "ReportViewer";
             this.reportViewer1.Size = new System.Drawing.Size(396, 246);
@@ -93,7 +95,7 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        //private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Drawing.Printing.PrintDocument printDocument1;

@@ -49,6 +49,8 @@ namespace CapaPresentacion
         }
         public void limpiarcampostransporte()
         {
+            btntransaddcrono.Enabled = false;
+            btntransaddclass.Enabled = false;
             //txttransagenciid.Text = "0";
             txttransid.Text = "0";
             //txttransagenciname.Text = "NULL";
@@ -394,6 +396,9 @@ namespace CapaPresentacion
 
         private void tabletransporte_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            btntransaddcrono.Enabled = true;
+            btntransaddclass.Enabled = true;
             //se obtiene info del row selecionado
 
             DataGridViewRow fila_selected = tabletransporte.CurrentRow;

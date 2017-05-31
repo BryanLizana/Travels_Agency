@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableagencias = new System.Windows.Forms.DataGridView();
             this.tabhoteles = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnhotelclear = new System.Windows.Forms.Button();
             this.btnhotelsave = new System.Windows.Forms.Button();
             this.btnhoteldel = new System.Windows.Forms.Button();
@@ -66,6 +67,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tablehotel = new System.Windows.Forms.DataGridView();
             this.tabtransportes = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
             this.btntransaddclass = new System.Windows.Forms.Button();
             this.btntransaddcrono = new System.Windows.Forms.Button();
             this.btntransclear = new System.Windows.Forms.Button();
@@ -128,8 +130,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.tableciudades = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.TabControlFrmBack.SuspendLayout();
             this.tabagencias.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -166,6 +169,7 @@
             // 
             // tabagencias
             // 
+            this.tabagencias.Controls.Add(this.label19);
             this.tabagencias.Controls.Add(this.btnlogout);
             this.tabagencias.Controls.Add(this.btnagenciaaddtransporte);
             this.tabagencias.Controls.Add(this.btnagenciaaddhotel);
@@ -196,57 +200,61 @@
             // 
             // btnagenciaaddtransporte
             // 
+            this.btnagenciaaddtransporte.BackColor = System.Drawing.Color.Peru;
             this.btnagenciaaddtransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnagenciaaddtransporte.Location = new System.Drawing.Point(550, 352);
             this.btnagenciaaddtransporte.Name = "btnagenciaaddtransporte";
             this.btnagenciaaddtransporte.Size = new System.Drawing.Size(148, 38);
             this.btnagenciaaddtransporte.TabIndex = 13;
             this.btnagenciaaddtransporte.Text = "Añadir trasporte";
-            this.btnagenciaaddtransporte.UseVisualStyleBackColor = true;
+            this.btnagenciaaddtransporte.UseVisualStyleBackColor = false;
             this.btnagenciaaddtransporte.Click += new System.EventHandler(this.btnagenciaaddtransporte_Click);
             // 
             // btnagenciaaddhotel
             // 
+            this.btnagenciaaddhotel.BackColor = System.Drawing.Color.Goldenrod;
             this.btnagenciaaddhotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnagenciaaddhotel.Location = new System.Drawing.Point(550, 396);
             this.btnagenciaaddhotel.Name = "btnagenciaaddhotel";
             this.btnagenciaaddhotel.Size = new System.Drawing.Size(148, 38);
             this.btnagenciaaddhotel.TabIndex = 12;
             this.btnagenciaaddhotel.Text = "Añadir Hotel";
-            this.btnagenciaaddhotel.UseVisualStyleBackColor = true;
+            this.btnagenciaaddhotel.UseVisualStyleBackColor = false;
             this.btnagenciaaddhotel.Click += new System.EventHandler(this.btnagenciaaddhotel_Click);
             // 
             // btnageclear
             // 
             this.btnageclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnageclear.Location = new System.Drawing.Point(550, 243);
+            this.btnageclear.Location = new System.Drawing.Point(617, 243);
             this.btnageclear.Name = "btnageclear";
-            this.btnageclear.Size = new System.Drawing.Size(148, 38);
+            this.btnageclear.Size = new System.Drawing.Size(81, 38);
             this.btnageclear.TabIndex = 11;
-            this.btnageclear.Text = "Limpiar Campos";
+            this.btnageclear.Text = "New";
             this.btnageclear.UseVisualStyleBackColor = true;
             this.btnageclear.Click += new System.EventHandler(this.btnageclear_Click);
             // 
             // btnagesave
             // 
+            this.btnagesave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnagesave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagesave.Location = new System.Drawing.Point(515, 194);
+            this.btnagesave.Location = new System.Drawing.Point(571, 194);
             this.btnagesave.Name = "btnagesave";
-            this.btnagesave.Size = new System.Drawing.Size(183, 34);
+            this.btnagesave.Size = new System.Drawing.Size(127, 34);
             this.btnagesave.TabIndex = 10;
-            this.btnagesave.Text = "CREAR";
-            this.btnagesave.UseVisualStyleBackColor = true;
+            this.btnagesave.Text = "Save";
+            this.btnagesave.UseVisualStyleBackColor = false;
             this.btnagesave.Click += new System.EventHandler(this.btnagesave_Click);
             // 
             // btnagedel
             // 
+            this.btnagedel.BackColor = System.Drawing.Color.IndianRed;
             this.btnagedel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnagedel.Location = new System.Drawing.Point(571, 145);
             this.btnagedel.Name = "btnagedel";
             this.btnagedel.Size = new System.Drawing.Size(127, 38);
             this.btnagedel.TabIndex = 9;
             this.btnagedel.Text = "ELIMINAR";
-            this.btnagedel.UseVisualStyleBackColor = true;
+            this.btnagedel.UseVisualStyleBackColor = false;
             this.btnagedel.Click += new System.EventHandler(this.btnagedel_Click);
             // 
             // btnageniasearch
@@ -352,6 +360,7 @@
             // 
             // tabhoteles
             // 
+            this.tabhoteles.Controls.Add(this.label21);
             this.tabhoteles.Controls.Add(this.button1);
             this.tabhoteles.Controls.Add(this.btnhotelclear);
             this.tabhoteles.Controls.Add(this.btnhotelsave);
@@ -367,37 +376,50 @@
             this.tabhoteles.Text = "Hoteles";
             this.tabhoteles.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(41, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(66, 38);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Atrás";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // btnhotelclear
             // 
             this.btnhotelclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhotelclear.Location = new System.Drawing.Point(545, 260);
+            this.btnhotelclear.Location = new System.Drawing.Point(620, 260);
             this.btnhotelclear.Name = "btnhotelclear";
-            this.btnhotelclear.Size = new System.Drawing.Size(148, 38);
+            this.btnhotelclear.Size = new System.Drawing.Size(73, 38);
             this.btnhotelclear.TabIndex = 11;
-            this.btnhotelclear.Text = "Limpiar Campos";
+            this.btnhotelclear.Text = "New";
             this.btnhotelclear.UseVisualStyleBackColor = true;
             this.btnhotelclear.Click += new System.EventHandler(this.btnhotelclear_Click);
             // 
             // btnhotelsave
             // 
+            this.btnhotelsave.BackColor = System.Drawing.Color.LimeGreen;
             this.btnhotelsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhotelsave.Location = new System.Drawing.Point(510, 213);
+            this.btnhotelsave.Location = new System.Drawing.Point(608, 213);
             this.btnhotelsave.Name = "btnhotelsave";
-            this.btnhotelsave.Size = new System.Drawing.Size(183, 32);
+            this.btnhotelsave.Size = new System.Drawing.Size(85, 32);
             this.btnhotelsave.TabIndex = 10;
-            this.btnhotelsave.Text = "CREAR";
-            this.btnhotelsave.UseVisualStyleBackColor = true;
+            this.btnhotelsave.Text = "SAVE";
+            this.btnhotelsave.UseVisualStyleBackColor = false;
             this.btnhotelsave.Click += new System.EventHandler(this.btnhotelsave_Click);
             // 
             // btnhoteldel
             // 
+            this.btnhoteldel.BackColor = System.Drawing.Color.IndianRed;
             this.btnhoteldel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnhoteldel.Location = new System.Drawing.Point(566, 154);
             this.btnhoteldel.Name = "btnhoteldel";
             this.btnhoteldel.Size = new System.Drawing.Size(127, 38);
             this.btnhoteldel.TabIndex = 9;
             this.btnhoteldel.Text = "ELIMINAR";
-            this.btnhoteldel.UseVisualStyleBackColor = true;
+            this.btnhoteldel.UseVisualStyleBackColor = false;
             this.btnhoteldel.Click += new System.EventHandler(this.btnhoteldel_Click);
             // 
             // btnhotelbuscar
@@ -573,48 +595,62 @@
             this.tabtransportes.Text = "Transportes";
             this.tabtransportes.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(672, 52);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(66, 38);
+            this.button6.TabIndex = 20;
+            this.button6.Text = "Atrás";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // btntransaddclass
             // 
+            this.btntransaddclass.BackColor = System.Drawing.Color.Orange;
             this.btntransaddclass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntransaddclass.Location = new System.Drawing.Point(562, 291);
             this.btntransaddclass.Name = "btntransaddclass";
             this.btntransaddclass.Size = new System.Drawing.Size(176, 38);
             this.btntransaddclass.TabIndex = 19;
             this.btntransaddclass.Text = "Añadir clases de Psj";
-            this.btntransaddclass.UseVisualStyleBackColor = true;
+            this.btntransaddclass.UseVisualStyleBackColor = false;
             this.btntransaddclass.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btntransaddcrono
             // 
+            this.btntransaddcrono.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.btntransaddcrono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntransaddcrono.Location = new System.Drawing.Point(562, 247);
             this.btntransaddcrono.Name = "btntransaddcrono";
             this.btntransaddcrono.Size = new System.Drawing.Size(176, 38);
             this.btntransaddcrono.TabIndex = 18;
             this.btntransaddcrono.Text = "Añadir Cronograma";
-            this.btntransaddcrono.UseVisualStyleBackColor = true;
+            this.btntransaddcrono.UseVisualStyleBackColor = false;
             this.btntransaddcrono.Click += new System.EventHandler(this.button1_Click);
             // 
             // btntransclear
             // 
             this.btntransclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntransclear.Location = new System.Drawing.Point(562, 193);
+            this.btntransclear.Location = new System.Drawing.Point(657, 193);
             this.btntransclear.Name = "btntransclear";
-            this.btntransclear.Size = new System.Drawing.Size(176, 38);
+            this.btntransclear.Size = new System.Drawing.Size(81, 38);
             this.btntransclear.TabIndex = 17;
-            this.btntransclear.Text = "Limpiar Campos";
+            this.btntransclear.Text = "New";
             this.btntransclear.UseVisualStyleBackColor = true;
             this.btntransclear.Click += new System.EventHandler(this.btntransclear_Click);
             // 
             // btntranssave
             // 
+            this.btntranssave.BackColor = System.Drawing.Color.LimeGreen;
             this.btntranssave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntranssave.Location = new System.Drawing.Point(525, 147);
+            this.btntranssave.Location = new System.Drawing.Point(618, 147);
             this.btntranssave.Name = "btntranssave";
-            this.btntranssave.Size = new System.Drawing.Size(213, 32);
+            this.btntranssave.Size = new System.Drawing.Size(120, 32);
             this.btntranssave.TabIndex = 16;
-            this.btntranssave.Text = "CREAR";
-            this.btntranssave.UseVisualStyleBackColor = true;
+            this.btntranssave.Text = "SAVE";
+            this.btntranssave.UseVisualStyleBackColor = false;
             this.btntranssave.Click += new System.EventHandler(this.btntranssave_Click);
             // 
             // tabletransporte
@@ -801,13 +837,14 @@
             // 
             // btntransdel
             // 
+            this.btntransdel.BackColor = System.Drawing.Color.LightCoral;
             this.btntransdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntransdel.Location = new System.Drawing.Point(573, 96);
             this.btntransdel.Name = "btntransdel";
             this.btntransdel.Size = new System.Drawing.Size(165, 38);
             this.btntransdel.TabIndex = 15;
             this.btntransdel.Text = "ELIMINAR";
-            this.btntransdel.UseVisualStyleBackColor = true;
+            this.btntransdel.UseVisualStyleBackColor = false;
             this.btntransdel.Click += new System.EventHandler(this.btntransdel_Click);
             // 
             // tabcronogramatrans
@@ -820,7 +857,7 @@
             this.tabcronogramatrans.Controls.Add(this.tablecronogramatransporte);
             this.tabcronogramatrans.Location = new System.Drawing.Point(4, 22);
             this.tabcronogramatrans.Name = "tabcronogramatrans";
-            this.tabcronogramatrans.Size = new System.Drawing.Size(805, 517);
+            this.tabcronogramatrans.Size = new System.Drawing.Size(805, 559);
             this.tabcronogramatrans.TabIndex = 3;
             this.tabcronogramatrans.Text = "Cronograma de transportes";
             this.tabcronogramatrans.UseVisualStyleBackColor = true;
@@ -838,24 +875,26 @@
             // 
             // btncronosave
             // 
+            this.btncronosave.BackColor = System.Drawing.Color.LimeGreen;
             this.btncronosave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncronosave.Location = new System.Drawing.Point(573, 126);
+            this.btncronosave.Location = new System.Drawing.Point(660, 126);
             this.btncronosave.Name = "btncronosave";
-            this.btncronosave.Size = new System.Drawing.Size(183, 38);
+            this.btncronosave.Size = new System.Drawing.Size(96, 38);
             this.btncronosave.TabIndex = 17;
-            this.btncronosave.Text = "CREAR";
-            this.btncronosave.UseVisualStyleBackColor = true;
+            this.btncronosave.Text = "SAVE";
+            this.btncronosave.UseVisualStyleBackColor = false;
             this.btncronosave.Click += new System.EventHandler(this.btncronosave_Click);
             // 
             // btncronodel
             // 
+            this.btncronodel.BackColor = System.Drawing.Color.IndianRed;
             this.btncronodel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncronodel.Location = new System.Drawing.Point(629, 77);
             this.btncronodel.Name = "btncronodel";
             this.btncronodel.Size = new System.Drawing.Size(127, 38);
             this.btncronodel.TabIndex = 16;
             this.btncronodel.Text = "ELIMINAR";
-            this.btncronodel.UseVisualStyleBackColor = true;
+            this.btncronodel.UseVisualStyleBackColor = false;
             this.btncronodel.Click += new System.EventHandler(this.btncronodel_Click);
             // 
             // btncronoburcar
@@ -990,7 +1029,7 @@
             this.tabclasstransporte.Controls.Add(this.tableclasstransporte);
             this.tabclasstransporte.Location = new System.Drawing.Point(4, 22);
             this.tabclasstransporte.Name = "tabclasstransporte";
-            this.tabclasstransporte.Size = new System.Drawing.Size(805, 517);
+            this.tabclasstransporte.Size = new System.Drawing.Size(805, 559);
             this.tabclasstransporte.TabIndex = 4;
             this.tabclasstransporte.Text = "Transporte Clases";
             this.tabclasstransporte.UseVisualStyleBackColor = true;
@@ -1008,24 +1047,26 @@
             // 
             // btnclasssave
             // 
+            this.btnclasssave.BackColor = System.Drawing.Color.LimeGreen;
             this.btnclasssave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclasssave.Location = new System.Drawing.Point(567, 126);
+            this.btnclasssave.Location = new System.Drawing.Point(657, 126);
             this.btnclasssave.Name = "btnclasssave";
-            this.btnclasssave.Size = new System.Drawing.Size(183, 38);
+            this.btnclasssave.Size = new System.Drawing.Size(93, 38);
             this.btnclasssave.TabIndex = 21;
-            this.btnclasssave.Text = "CREAR";
-            this.btnclasssave.UseVisualStyleBackColor = true;
+            this.btnclasssave.Text = "SAVE";
+            this.btnclasssave.UseVisualStyleBackColor = false;
             this.btnclasssave.Click += new System.EventHandler(this.btnclasssave_Click);
             // 
             // btnclassdel
             // 
+            this.btnclassdel.BackColor = System.Drawing.Color.IndianRed;
             this.btnclassdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclassdel.Location = new System.Drawing.Point(623, 77);
             this.btnclassdel.Name = "btnclassdel";
             this.btnclassdel.Size = new System.Drawing.Size(127, 38);
             this.btnclassdel.TabIndex = 20;
             this.btnclassdel.Text = "ELIMINAR";
-            this.btnclassdel.UseVisualStyleBackColor = true;
+            this.btnclassdel.UseVisualStyleBackColor = false;
             this.btnclassdel.Visible = false;
             // 
             // btnclassbucar
@@ -1155,6 +1196,7 @@
             // 
             // tabCiudades
             // 
+            this.tabCiudades.Controls.Add(this.label23);
             this.tabCiudades.Controls.Add(this.txtirtxtid);
             this.tabCiudades.Controls.Add(this.txtirtxtname);
             this.tabCiudades.Controls.Add(this.txtselected);
@@ -1164,7 +1206,7 @@
             this.tabCiudades.Controls.Add(this.tableciudades);
             this.tabCiudades.Location = new System.Drawing.Point(4, 22);
             this.tabCiudades.Name = "tabCiudades";
-            this.tabCiudades.Size = new System.Drawing.Size(805, 517);
+            this.tabCiudades.Size = new System.Drawing.Size(805, 559);
             this.tabCiudades.TabIndex = 5;
             this.tabCiudades.Text = "TabCiudades";
             this.tabCiudades.UseVisualStyleBackColor = true;
@@ -1203,13 +1245,14 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.LimeGreen;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(283, 404);
+            this.button3.Location = new System.Drawing.Point(283, 394);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 33);
             this.button3.TabIndex = 26;
             this.button3.Text = "Seleccionar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
@@ -1240,27 +1283,38 @@
             this.tableciudades.TabIndex = 23;
             this.tableciudades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableciudades_CellContentClick);
             // 
-            // button1
+            // label19
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(716, 260);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 38);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Atrás";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label19.Location = new System.Drawing.Point(479, 3);
+            this.label19.Name = "label19";
+            this.label19.Padding = new System.Windows.Forms.Padding(10);
+            this.label19.Size = new System.Drawing.Size(326, 61);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Travels Agency E.";
             // 
-            // button6
+            // label21
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(672, 52);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(66, 38);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "Atrás";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label21.Location = new System.Drawing.Point(479, 0);
+            this.label21.Name = "label21";
+            this.label21.Padding = new System.Windows.Forms.Padding(10);
+            this.label21.Size = new System.Drawing.Size(326, 61);
+            this.label21.TabIndex = 17;
+            this.label21.Text = "Travels Agency E.";
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label23.Location = new System.Drawing.Point(452, 206);
+            this.label23.Name = "label23";
+            this.label23.Padding = new System.Windows.Forms.Padding(10);
+            this.label23.Size = new System.Drawing.Size(326, 61);
+            this.label23.TabIndex = 31;
+            this.label23.Text = "Travels Agency E.";
             // 
             // FrmBack
             // 
@@ -1402,5 +1456,8 @@
         private System.Windows.Forms.Button btnclassbucar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label23;
     }
 }

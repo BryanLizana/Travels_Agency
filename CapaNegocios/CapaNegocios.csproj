@@ -48,6 +48,7 @@
     <Compile Include="CronogramaTransController.cs" />
     <Compile Include="HotelController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test.cs" />
     <Compile Include="TransporteController.cs" />
     <Compile Include="UserController.cs" />
     <Compile Include="VentaController.cs" />
